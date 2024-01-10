@@ -10,8 +10,17 @@ address = input("Enter your address: ")
 
 id = secrets.token_hex(4)
 
-fields = ['ID', 'First Name', 'Last Name', 'Age']
-rows = [[id, first_name.capitalize(), last_name.capitalize(), age]]
+if first_name[-1] == 'a':
+    gender = "F"
+elif first_name[-1] == 'i':
+    gender = "F"
+elif first_name[-1] == 'o':
+    gender =  "M"
+else:
+    gender = "M"
+
+fields = ['ID', 'First Name', 'Last Name', 'Gender', 'Age']
+rows = [[id, first_name.capitalize(), last_name.capitalize(), gender, age]]
 
 with open("user_data.csv", 'w') as csvfile: 
     csvwriter = csv.writer(csvfile) 
